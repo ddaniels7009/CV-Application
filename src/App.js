@@ -1,6 +1,7 @@
 import './App.css';
 import { Component } from "react";
-import Name from './components/name'
+//import Name from './components/name'
+
 
 
 class App extends Component {
@@ -9,29 +10,57 @@ class App extends Component {
     super();
 
     this.state = {
-      user: {
         name: 'edi',
-        email: 'edi@gmail.com'
-      },
+        email: 'edi@gmail.com',
+        bucket: []
     };
   }
+
+  handleChange = args => (e) => {
+    console.log(e.target.value);
+    this.setState({
+      [args]: e.target.value
+    })
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    this.setState({
+      bucket: this.state.bucket.concat("test")
+    })
+    
+
+  };
 
   render() {
 
     return (
       <div>
-        <form>
-          <label>Name</label>
-          <input type="test"></input>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            
+          </label>
+          <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange('name')}
+            ></input>
+          <br />
+          <label>
+            email:
+          </label>
+          <input
+              type="text"
+              name="test2"
+              value={this.state.email}
+              onChange={this.handleChange('email')}>
+              </input>
 
-          <label>email</label>
-          <input type="test"></input>
-
-          <button>Submit info</button>
+          <button type="submit">Submit info</button>
         </form>
-
-        <Name user={this.state.user} />
-
       </div>
 
     );
