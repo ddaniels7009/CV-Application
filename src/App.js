@@ -1,7 +1,9 @@
 import './App.css';
 import { Component } from "react";
-//import Name from './components/name'
-
+import Name from './components/name'
+import InputForm from './components/form';
+import Button from './components/button';
+import Cv from './components/cv';
 
 
 class App extends Component {
@@ -10,9 +12,9 @@ class App extends Component {
     super();
 
     this.state = {
-        name: 'edi',
-        email: 'edi@gmail.com',
-        bucket: []
+      name: 'edi',
+      email: 'edi@gmail.com',
+      saved: false
     };
   }
 
@@ -23,44 +25,27 @@ class App extends Component {
     })
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-    this.setState({
-      bucket: this.state.bucket.concat("test")
-    })
-    
-
-  };
-
+  updateSaved = () => {
+    {
+      this.state.saved
+        ? this.setState({
+          saved: false
+        })
+        : this.setState({
+          saved: true
+        })
+    }
+  }
+  //<Name saved={this.state.saved} name={this.state.name} email={this.state.email}/>
+  //<Button saved={this.props.saved} changeIt={this.updateSaved} />
   render() {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            
-          </label>
-          <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange('name')}
-            ></input>
-          <br />
-          <label>
-            email:
-          </label>
-          <input
-              type="text"
-              name="test2"
-              value={this.state.email}
-              onChange={this.handleChange('email')}>
-              </input>
-
-          <button type="submit">Submit info</button>
-        </form>
+        {this.state.saved
+          ? <Cv name={this.state.name} changeIt={this.updateSaved}></Cv>
+          : <InputForm saved={this.state.saved} name={this.state.name} email={this.state.email} changeIt={this.updateSaved} handleChange={this.handleChange} />
+        }
       </div>
 
     );
