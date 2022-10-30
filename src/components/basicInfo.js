@@ -9,7 +9,6 @@ class BasicInfoForm extends Component {
     }
 
   
-
     render() {
         return (
             <div>
@@ -45,7 +44,7 @@ class BasicInfoForm extends Component {
                     onChange={this.props.handleChange('phone')}>
                 </input>
                 <br />
-                <Button saved={this.props.saved} changeIt={this.props.changeIt}/>
+                
             </form>
         </div>
         );

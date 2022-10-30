@@ -7,6 +7,12 @@ body{
   background-color: rgb(155, 152, 145);
 }
 
+div{
+  background-color: rgb(77, 77, 77);
+  height: 100%;
+  border-radius: 1px;
+}
+
 
 
 
