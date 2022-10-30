@@ -1,12 +1,11 @@
 import { Component } from "react";
 import Button from './button'
 
-class InputForm extends Component {
+class BasicInfoForm extends Component {
     // eslint-disable-next-line
     constructor(props) {
         super(props);
         //console.log(this.props)
-        console.log(this.props.handleChange('name'))
     }
 
   
@@ -29,10 +28,21 @@ class InputForm extends Component {
                     Email:
                 </label>
                 <input
-                    type="text"
+                    type="email"
                     name="email"
                     value={this.props.email}
                     onChange={this.props.handleChange('email')}>
+                </input>
+                <br />
+                <label>
+                    Phone:
+                </label>
+                <input
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    name="tel"
+                    value={this.props.phone}
+                    onChange={this.props.handleChange('phone')}>
                 </input>
                 <br />
                 <Button saved={this.props.saved} changeIt={this.props.changeIt}/>
@@ -43,4 +53,4 @@ class InputForm extends Component {
 
 }
 
-export default InputForm
+export default BasicInfoForm

@@ -1,7 +1,7 @@
 import { Component } from "react";
 //import { App } from '../App'
 
-class Name extends Component {
+class EducationInfo extends Component {
 
     constructor(props) {
         super(props);
@@ -18,4 +18,4 @@ class Name extends Component {
 
 }
 
-export default Name
+export default EducationInfo

@@ -1,19 +1,22 @@
 import { Component } from "react";
 import Button from './button';
+import '../styles/looks.css'
 
 class Cv extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props)
+        //console.log(this.props)
     }
 
 
     render() {
         return (
-            <div>
+            <div id="testing">
                 <div>{this.props.name}</div>
-                <button type="submit" onClick={this.props.changeIt}>Edit</button>
+                <div>{this.props.email}</div>
+                <div>{this.props.phone}</div>
+                <button type="button" onClick={this.props.changeIt}>Edit</button>
             </div>
         )
     }

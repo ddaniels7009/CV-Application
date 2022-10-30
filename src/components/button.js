@@ -13,7 +13,7 @@ class Button extends Component {
 
         return (
             <div>
-                <button type="submit" onClick={this.props.changeIt}>Save</button>
+                <button type="button" onClick={this.props.changeIt}>Save</button>
             </div>
         );
     }
