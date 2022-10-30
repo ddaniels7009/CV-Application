@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Button from './button';
 
 class Cv extends Component {
 
@@ -6,7 +7,7 @@ class Cv extends Component {
         super(props);
         console.log(this.props)
     }
-      
+
 
     render() {
         return (
@@ -14,7 +15,7 @@ class Cv extends Component {
                 <div>{this.props.name}</div>
                 <button type="submit" onClick={this.props.changeIt}>Edit</button>
             </div>
-        );
+        )
     }
 
 }

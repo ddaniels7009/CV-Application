@@ -1,8 +1,8 @@
 import './App.css';
 import { Component } from "react";
-import Name from './components/name'
+//import Name from './components/name'
 import InputForm from './components/form';
-import Button from './components/button';
+//import Button from './components/button';
 import Cv from './components/cv';
 
 
@@ -40,16 +40,27 @@ class App extends Component {
   //<Button saved={this.props.saved} changeIt={this.updateSaved} />
   render() {
 
-    return (
-      <div>
-        {this.state.saved
-          ? <Cv name={this.state.name} changeIt={this.updateSaved}></Cv>
-          : <InputForm saved={this.state.saved} name={this.state.name} email={this.state.email} changeIt={this.updateSaved} handleChange={this.handleChange} />
-        }
-      </div>
 
-    );
+
+    if (this.state.saved) {
+      return (
+        <div>
+          <Cv name={this.state.name} changeIt={this.updateSaved}></Cv>
+        </div>
+      );
+    }
+
+
+    else {
+      return (
+        <InputForm saved={this.state.saved} name={this.state.name} email={this.state.email} changeIt={this.updateSaved} handleChange={this.handleChange} />
+      );
+    }
   }
+
+
+
+
 }
 
 export default App;
