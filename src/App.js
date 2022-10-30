@@ -2,7 +2,7 @@ import './App.css';
 import { Component } from "react";
 //import Name from './components/name'
 import BasicInfoForm from './components/basicInfo';
-//import Button from './components/button';
+import Button from './components/button';
 import Cv from './components/cv';
 import EducationInfo from './components/education';
 import WorkInfo from './components/work';
@@ -104,6 +104,8 @@ class App extends Component {
             changeIt={this.updateSaved}
             handleChange={this.handleChange}
           />
+          <Button changeIt={this.updateSaved} /> {/* We only need to have the 'saved' prop held in state in the App component. 
+                                                    All other props can be moved to its inddividual component */}
         </div>
       );
     }

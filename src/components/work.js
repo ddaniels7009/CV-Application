@@ -55,7 +55,7 @@ class WorkInfo extends Component {
                 <br />
                 
             </form>
-              <Button saved={this.props.saved} changeIt={this.props.changeIt}/>
+              
             </div>
         );
     }
