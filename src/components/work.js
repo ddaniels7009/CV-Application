@@ -1,6 +1,7 @@
 import { Component } from "react";
 //import { App } from '../App'
 import Button from './button'
+import '../styles/looks.css'
 
 class WorkInfo extends Component {
 
@@ -64,7 +65,7 @@ class WorkInfo extends Component {
                             Tasks:
                         </label>
                         <input
-                            type="text"
+                            type="textarea"
                             name="tasks"
                             value={this.state.tasks}
                             onChange={this.handleChange('tasks')}>

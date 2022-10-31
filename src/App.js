@@ -16,13 +16,6 @@ class App extends Component {
     };
   }
 
-  handleChange = args => (e) => {
-    //console.log(e.target.value);
-    this.setState({
-      [args]: e.target.value
-    })
-  };
-
   updateSaved = () => {
     {
       this.state.saved
@@ -37,18 +30,18 @@ class App extends Component {
 
   render() {
 
-      return (
-        <div>
-          <BasicInfoForm saved={this.state.saved} />
-          <EducationInfo saved={this.state.saved} />
-          <WorkInfo saved={this.state.saved} />
-          <Button changeIt={this.updateSaved} /> 
+    return (
+      <div>
+        <BasicInfoForm saved={this.state.saved} />
+        <EducationInfo saved={this.state.saved} />
+        <WorkInfo saved={this.state.saved} />
+        <Button changeIt={this.updateSaved} />
 
-          {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
-        </div>
-      );
-    }
-  
+        {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
+      </div>
+    );
+  }
+
 }
 
 export default App;

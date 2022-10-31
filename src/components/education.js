@@ -26,7 +26,7 @@ class EducationInfo extends Component {
         if (this.props.saved) {
             return (
                 <div>
-                    <div>{this.state.organization}</div>
+                    <div>{this.state.school}</div>
                     <div>{this.state.major}</div>
                     <div>{this.state.dateFrom}</div>
                     <div>{this.state.dateTo}</div>

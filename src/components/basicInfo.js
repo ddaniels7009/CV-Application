@@ -8,8 +8,9 @@ class BasicInfoForm extends Component {
         //console.log(this.props)
 
         this.state = {
-            name: 'edi',
-            email: 'edi@gmail.com',
+            fname: 'First Name',
+            lname: 'Last Name',
+            email: 'Email',
             phone: 9703974038,
         }
     }
@@ -27,7 +28,8 @@ class BasicInfoForm extends Component {
         if (this.props.saved) {
             return (
                 <div>
-                    <div>{this.state.name}</div>
+                    <div>{this.state.fname}</div>
+                    <div>{this.state.lname}</div>
                     <div>{this.state.email}</div>
                     <div>{this.state.phone}</div>
                 </div>
@@ -39,13 +41,24 @@ class BasicInfoForm extends Component {
                     <div>
                         <form >
                             <label>
-                                Name:
+                                First Name:
                             </label>
                             <input
                                 type="text"
-                                name="name"
-                                value={this.state.name}
-                                onChange={this.handleChange('name')}
+                                name="fname"
+                                required
+                                value={this.state.fname}
+                                onChange={this.handleChange('fname')}
+                            ></input>
+                            <br />
+                            <label>
+                                Last Name:
+                            </label>
+                            <input
+                                type="text"
+                                name="lname"
+                                value={this.state.lname}
+                                onChange={this.handleChange('lname')}
                             ></input>
                             <br />
                             <label>
