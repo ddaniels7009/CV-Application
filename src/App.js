@@ -1,9 +1,7 @@
 import './App.css';
 import { Component } from "react";
-//import Name from './components/name'
 import BasicInfoForm from './components/basicInfo';
 import Button from './components/button';
-import Cv from './components/cv';
 import EducationInfo from './components/education';
 import WorkInfo from './components/work';
 
@@ -14,21 +12,6 @@ class App extends Component {
     super();
 
     this.state = {
-      name: 'edi',
-      email: 'edi@gmail.com',
-      phone: 9703974038,
-
-      school: 'CSU',
-      degree: 'Computer Information Systems',
-      studyFrom: "",
-      studyTo: "",
-
-      company: 'Fast',
-      position: 'Technical Team Member',
-      tasks: 'Lorem ipsum dolor sit amet, erat democritum consectetuer est in, ea mea inani aeque scriptorem, erant possit his ut. Nec ex veritus percipitur. Eius copiosae pericula vis ei, natum liber no eos, ei quo erat illud consulatu. His elit scribentur eloquentiam ei, eros vide illud cum et, nullam erroribus cotidieque ut sed.',
-      workFrom: '',
-      workTo: '',
-
       saved: false
     };
   }
@@ -54,62 +37,18 @@ class App extends Component {
 
   render() {
 
-    if (this.state.saved) {
       return (
         <div>
-          <Cv
-            name={this.state.name}
-            email={this.state.email}
-            phone={this.state.phone}
-            changeIt={this.updateSaved}
-            school={this.state.school}
-            degree={this.state.degree}
-            from={this.state.studyFrom}
-            to={this.state.studyTo}
-            company={this.state.company}
-            position={this.state.position}
-            tasks={this.state.tasks}>
+          <BasicInfoForm saved={this.state.saved} />
+          <EducationInfo saved={this.state.saved} />
+          <WorkInfo saved={this.state.saved} />
+          <Button changeIt={this.updateSaved} /> 
 
-          </Cv>
+          {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
         </div>
       );
     }
-
-    else {
-      return (
-        <div>
-          <BasicInfoForm
-            saved={this.state.saved}
-            name={this.state.name}
-            email={this.state.email}
-            phone={this.state.phone}
-            changeIt={this.updateSaved}
-            handleChange={this.handleChange}
-          />
-
-          <EducationInfo
-            saved={this.state.saved}
-            school={this.state.school}
-            degree={this.state.degree}
-            from={this.state.studyFrom}
-            to={this.state.studyTo}
-            changeIt={this.updateSaved}
-            handleChange={this.handleChange}
-          />
-
-          <WorkInfo
-            company={this.state.company}
-            position={this.state.position}
-            tasks={this.state.tasks}
-            changeIt={this.updateSaved}
-            handleChange={this.handleChange}
-          />
-          <Button changeIt={this.updateSaved} /> {/* We only need to have the 'saved' prop held in state in the App component. 
-                                                    All other props can be moved to its inddividual component */}
-        </div>
-      );
-    }
-  }
+  
 }
 
 export default App;
