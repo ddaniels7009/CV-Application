@@ -31,14 +31,21 @@ class App extends Component {
   render() {
 
     return (
-      <div>
-        <BasicInfoForm saved={this.state.saved} />
-        <EducationInfo saved={this.state.saved} />
-        <WorkInfo saved={this.state.saved} />
-        <Button changeIt={this.updateSaved} />
 
-        {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
+      <div className="cvComplete">
+        <div className='secondaryContainer'>
+          <BasicInfoForm saved={this.state.saved} />
+          <br/>
+          <EducationInfo saved={this.state.saved} />
+          <br/>
+          <WorkInfo saved={this.state.saved} />
+          <br/>
+          <Button changeIt={this.updateSaved} saved={this.state.saved}/>
+
+          {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
+        </div>
       </div>
+
     );
   }
 

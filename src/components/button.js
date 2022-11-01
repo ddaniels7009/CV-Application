@@ -10,11 +10,20 @@ class Button extends Component {
 
     render() {
 
+        if(this.props.saved){
         return (
             <div>
-                <button type="button" onClick={this.props.changeIt}>Save</button>
+                <button type="button" onClick={this.props.changeIt}>Edit</button>
             </div>
         );
+        }
+        else{
+            return (
+                <div>
+                    <button type="button" onClick={this.props.changeIt}>Save</button>
+                </div>
+            );
+        }
     }
 
 }

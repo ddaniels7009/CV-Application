@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from './button'
+import '../App.css';
 
 class EducationInfo extends Component {
 
@@ -9,7 +9,7 @@ class EducationInfo extends Component {
 
         this.state = {
             school: 'CSU',
-            major: 'CS',
+            major: 'Computer Science',
             dateFrom: '2022-12-25',
             dateTo: '2022-12-25'
         }
@@ -37,45 +37,40 @@ class EducationInfo extends Component {
             return (
                 <div>
                     <form >
-                        <label>
-                            School:
-                        </label>
+                    <label>Education</label>
                         <input
                             type="text"
                             name="school"
+                            placeholder="School Name"
                             value={this.state.school}
                             onChange={this.handleChange('school')}
                         ></input>
-                        <br />
-                        <label>
-                            Major:
-                        </label>
+                        
+                        
                         <input
                             type="text"
                             name="major"
+                            placeholder="Major"
                             value={this.state.major}
                             onChange={this.handleChange('major')}>
                         </input>
-                        <br />
-                        <label>
-                            Attended From:
-                        </label>
+                        
+                        
                         <input
                             type="date"
                             name="dateFrom"
                             value={this.state.dateFrom}
                             onChange={this.handleChange('dateFrom')}>
                         </input>
-                        <label>
-                            Attended To:
-                        </label>
+                        
+
                         <input
                             type="date"
                             name="dateTo"
                             value={this.state.dateTo}
                             onChange={this.handleChange('dateTo')}>
                         </input>
-                        <br />
+                        
                     </form>
                 </div>
             );

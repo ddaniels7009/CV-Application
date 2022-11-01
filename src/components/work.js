@@ -1,7 +1,6 @@
 import { Component } from "react";
 //import { App } from '../App'
-import Button from './button'
-import '../styles/looks.css'
+import '../App.css';
 
 class WorkInfo extends Component {
 
@@ -10,7 +9,7 @@ class WorkInfo extends Component {
         //console.log(this.props)
 
         this.state = {
-            company: 'Fast',
+            company: 'FAST',
             position: 'Technical Team Member',
             tasks: 'Lorem ipsum dolor sit amet, erat democritum consectetuer est in, ea mea inani aeque scriptorem, erant possit his ut. Nec ex veritus percipitur. Eius copiosae pericula vis ei, natum liber no eos, ei quo erat illud consulatu. His elit scribentur eloquentiam ei, eros vide illud cum et, nullam erroribus cotidieque ut sed.',
             workFrom: '2022-12-25',
@@ -41,39 +40,34 @@ class WorkInfo extends Component {
             return (
                 <div>
                     <form >
-                        <label>
-                            Company:
-                        </label>
+                        <label>Work Experience</label>
                         <input
                             type="text"
                             name="company"
+                            placeholder="Company"
                             value={this.state.company}
                             onChange={this.handleChange('company')}
                         ></input>
-                        <br />
-                        <label>
-                            Position:
-                        </label>
+                        
+                        
                         <input
                             type="text"
                             name="position"
+                            placeholder="Title"
                             value={this.state.position}
                             onChange={this.handleChange('position')}>
                         </input>
-                        <br />
-                        <label>
-                            Tasks:
-                        </label>
-                        <input
-                            type="textarea"
+                        
+                        
+                        <textarea
+                            type="text"
                             name="tasks"
+                            placeholder="Responsibilities/Tasks"
                             value={this.state.tasks}
                             onChange={this.handleChange('tasks')}>
-                        </input>
-                        <br />
-                        <label>
-                            Work From:
-                        </label>
+                        </textarea>
+                        
+                        
                         <input
                             type="date"
                             name="workFrom"
@@ -81,16 +75,14 @@ class WorkInfo extends Component {
                             onChange={this.handleChange('workFrom')}>
                         </input>
                         
-                        <label>
-                            Work To:
-                        </label>
+                        
                         <input
                             type="date"
                             name="workTo"
                             value={this.state.workTo}
                             onChange={this.handleChange('workTo')}>
                         </input>
-                        <br />
+                        
                     </form>
                 </div>
             );

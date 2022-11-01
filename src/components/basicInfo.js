@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from './button'
+import '../App.css';
 
 class BasicInfoForm extends Component {
     // eslint-disable-next-line
@@ -8,10 +8,10 @@ class BasicInfoForm extends Component {
         //console.log(this.props)
 
         this.state = {
-            fname: 'First Name',
-            lname: 'Last Name',
-            email: 'Email',
-            phone: 9703974038,
+            fname: 'Commander',
+            lname: 'Shepard',
+            email: 'citadel@gmail.com',
+            phone: '555-555-5555',
         }
     }
 
@@ -27,65 +27,60 @@ class BasicInfoForm extends Component {
 
         if (this.props.saved) {
             return (
-                <div>
-                    <div>{this.state.fname}</div>
-                    <div>{this.state.lname}</div>
-                    <div>{this.state.email}</div>
-                    <div>{this.state.phone}</div>
+                
+                <div >
+                    <h1>{this.state.fname + ' ' + this.state.lname}</h1>
+                    <h3 >{this.state.email}</h3>
+                    <h4 >{this.state.phone}</h4>
                 </div>
+                
             );
         }
         else {
             return (
-                <div>
+                
                     <div>
                         <form >
-                            <label>
-                                First Name:
-                            </label>
+                            <label>Personal Info</label>
                             <input
                                 type="text"
                                 name="fname"
-                                required
+                                placeholder="Name, First"
                                 value={this.state.fname}
                                 onChange={this.handleChange('fname')}
                             ></input>
-                            <br />
-                            <label>
-                                Last Name:
-                            </label>
+                            
+                            
                             <input
                                 type="text"
                                 name="lname"
+                                placeholder="Name, Last"
                                 value={this.state.lname}
                                 onChange={this.handleChange('lname')}
                             ></input>
-                            <br />
-                            <label>
-                                Email:
-                            </label>
+                            
+                            
                             <input
                                 type="email"
                                 name="email"
+                                placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.handleChange('email')}>
                             </input>
-                            <br />
-                            <label>
-                                Phone:
-                            </label>
+                            
+                            
                             <input
                                 type="tel"
                                 pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                                 name="tel"
+                                placeholder="555-555-5555"
                                 value={this.state.phone}
                                 onChange={this.handleChange('phone')}>
                             </input>
-                            <br />
-
+                            
                         </form>
                     </div>
-                </div>
+                
             );
         }
     }
