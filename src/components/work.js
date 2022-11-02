@@ -12,8 +12,8 @@ class WorkInfo extends Component {
             company: 'FAST',
             position: 'Technical Team Member',
             tasks: 'Lorem ipsum dolor sit amet, erat democritum consectetuer est in, ea mea inani aeque scriptorem, erant possit his ut. Nec ex veritus percipitur. Eius copiosae pericula vis ei, natum liber no eos, ei quo erat illud consulatu. His elit scribentur eloquentiam ei, eros vide illud cum et, nullam erroribus cotidieque ut sed.',
-            workFrom: '2022-12-25',
-            workTo: '2022-12-25',
+            workFrom: 'Jan 2021',
+            workTo: 'Dec 2022',
         }
     }
 
@@ -30,9 +30,10 @@ class WorkInfo extends Component {
                 <div>
                     <div>{this.state.company}</div>
                     <div>{this.state.position}</div>
-                    <div>{this.state.tasks}</div>
                     <div>{this.state.workFrom}</div>
                     <div>{this.state.workTo}</div>
+                    <div>{this.state.tasks}</div>
+                    
                 </div>
             );
         }
@@ -57,8 +58,25 @@ class WorkInfo extends Component {
                             value={this.state.position}
                             onChange={this.handleChange('position')}>
                         </input>
+
+                        
+                        <input
+                            type="text"
+                            name="workFrom"
+                            placeholder="Start Date"
+                            value={this.state.workFrom}
+                            onChange={this.handleChange('workFrom')}>
+                        </input>
                         
                         
+                        <input
+                            type="text"
+                            name="workTo"
+                            placeholder="End Date / Present"
+                            value={this.state.workTo}
+                            onChange={this.handleChange('workTo')}>
+                        </input>
+
                         <textarea
                             type="text"
                             name="tasks"
@@ -66,22 +84,6 @@ class WorkInfo extends Component {
                             value={this.state.tasks}
                             onChange={this.handleChange('tasks')}>
                         </textarea>
-                        
-                        
-                        <input
-                            type="date"
-                            name="workFrom"
-                            value={this.state.workFrom}
-                            onChange={this.handleChange('workFrom')}>
-                        </input>
-                        
-                        
-                        <input
-                            type="date"
-                            name="workTo"
-                            value={this.state.workTo}
-                            onChange={this.handleChange('workTo')}>
-                        </input>
                         
                     </form>
                 </div>

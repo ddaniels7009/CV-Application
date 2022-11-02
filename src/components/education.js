@@ -10,8 +10,8 @@ class EducationInfo extends Component {
         this.state = {
             school: 'CSU',
             major: 'Computer Science',
-            dateFrom: '2022-12-25',
-            dateTo: '2022-12-25'
+            dateFrom: "2022-10-05",
+            dateTo: "2022-10-05",
         }
     }
 
@@ -57,16 +57,18 @@ class EducationInfo extends Component {
                         
                         
                         <input
-                            type="date"
+                            type="text"
                             name="dateFrom"
+                            placeholder="Start Date"
                             value={this.state.dateFrom}
                             onChange={this.handleChange('dateFrom')}>
                         </input>
                         
 
                         <input
-                            type="date"
+                            type="text"
                             name="dateTo"
+                            placeholder="End Date / Present"
                             value={this.state.dateTo}
                             onChange={this.handleChange('dateTo')}>
                         </input>

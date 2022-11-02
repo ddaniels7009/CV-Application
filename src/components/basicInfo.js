@@ -30,8 +30,8 @@ class BasicInfoForm extends Component {
                 
                 <div >
                     <h1>{this.state.fname + ' ' + this.state.lname}</h1>
-                    <h3 >{this.state.email}</h3>
-                    <h4 >{this.state.phone}</h4>
+                    <div id="break"></div>
+                    <div id="detailsOne"><p>{this.state.phone }&nbsp; | &nbsp;</p> <p>{this.state.email}</p></div>
                 </div>
                 
             );
@@ -75,9 +75,8 @@ class BasicInfoForm extends Component {
                                 name="tel"
                                 placeholder="555-555-5555"
                                 value={this.state.phone}
-                                onChange={this.handleChange('phone')}>
+                                onChange={this.handleChange('phone')}>  
                             </input>
-                            
                         </form>
                     </div>
                 
