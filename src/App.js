@@ -4,7 +4,7 @@ import BasicInfoForm from './components/basicInfo';
 import Button from './components/button';
 import EducationInfo from './components/education';
 import WorkInfo from './components/work';
-
+import Testing from './components/testing';
 
 class App extends Component {
 
@@ -41,6 +41,8 @@ class App extends Component {
           <WorkInfo saved={this.state.saved} />
           <br/>
           <Button changeIt={this.updateSaved} saved={this.state.saved}/>
+          <br/>
+          <Testing saved={this.state.saved}/>
 
           {/* We only need to have the 'saved' prop held in state in the App component. All other props can be moved to its inddividual component */}
         </div>
